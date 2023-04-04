@@ -1,0 +1,22 @@
+ALGORITHM insert_element
+VAR
+    tab: ARRAY_OF INTEGER[];
+    i:INTEGER;
+    j:INTEGER:=0;
+    k
+BEGIN
+    i:=1;
+    WHILE (i<=tab.length) DO
+        j:=i-1;
+        k:=tab[i];
+
+    WHILE (i>0 AND tab[j]>k) DO
+        tab[j+1]:=tab[j];
+        j:=j-1;
+
+    END_WHILE
+    tab[j+1]:=k;
+    i:=i+1;
+    
+    END_WHILE
+END

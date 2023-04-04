@@ -1,0 +1,20 @@
+ALGORITHM check_overlap
+VAR
+    i,j:INTEGER:=0;
+    intrv1,intrv2:ARRAY_OF INTEGER[]
+    over:BOOLEAN;
+    start,end:INTEGER;// represent the start of an intrval and its end
+BEGIN
+    //reading elements in the two intervals
+    //In the sorted array, if start element of an interval is superior than end element of previous interval
+    // then there is not an overlap
+    FOR i FROM start TO end STEP 1 DO
+      FOR j FROM start TO end STEP 1  DO
+        IF (intrv1[end]<= intrv2[start]) THEN
+            over:= FALSE; //there is not overlap
+        ELSE
+            over:=TRUE;
+        END_IF
+      END_FOR
+    END_FOR
+END
