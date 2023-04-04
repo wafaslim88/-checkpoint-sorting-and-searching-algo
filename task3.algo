@@ -1,0 +1,32 @@
+ALGORITHM sum_close_to_zero
+VAR
+    arr: ARRAY_OF INTEGER[20];
+    i,j:INTEGER;
+    sum_min:INTEGER;// the minimum sum of two elements
+    sum:INTEGER;
+    left_min: INTEGER;//the minimum left position
+    right_min: INTEGER;//the minimum right position
+BEGIN
+    // check the array lengh
+    // it must contain atleast two elements
+    IF (arr.lengh<2) THEN
+        write("the sum of two elements close to zero is invalid")
+    END_IF    
+    //initialize variables
+       left_min:= 0;
+       right_min:= 1;
+       sum_min = arr[0] + arr[1];
+    // nested loop to iterate through the array
+    FOR i FROM 0 TO length-1 STEP 1  DO
+        FOR j FROM i+1 TO lengh STEP 1  DO
+            sum:=arr[i] + arr[j];
+        END_FOR
+    END_FOR    
+    // let's find the minimum sum
+    IF (abs(sum_min)> abs(sum)) THEN
+        sum_min:= sum;
+        left_min:=i;
+        right_min:=j;
+    END_IF
+     write("the elements of the sum closest to zero are : arr[left_min] and arr[right_min]") ;
+    END
