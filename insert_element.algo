@@ -1,16 +1,19 @@
 ALGORITHM insert_element
 VAR
-    tab: ARRAY_OF INTEGER[];
+    tab: ARRAY_OF INTEGER[20];
     i:INTEGER;
     j:INTEGER:=0;
-    k
+    k:INTEGER;
 BEGIN
     i:=1;
     WHILE (i<=tab.length) DO
         j:=i-1;
         k:=tab[i];
-
-    WHILE (i>0 AND tab[j]>k) DO
+    // Move elements of tab[0..i-1], that are
+    // greater than k to one position ahead
+    //  of their current position 
+  
+   WHILE (i>0 AND tab[j]>k) DO
         tab[j+1]:=tab[j];
         j:=j-1;
 
